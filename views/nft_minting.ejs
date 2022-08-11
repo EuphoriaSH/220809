@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="./assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- data-piker -->
+  <!-- datepicker 는 jquery 1.7.1 이상 bootstrap 2.0.4 이상 버전이 필요함 -->
+  <!-- jQuery가 먼저 로드 된 후 datepicker가 로드 되어야함.-->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <link rel="stylesheet" href="./assets/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.css"></link>
+  <script type="text/javascript" src="./assets/bootstrap-datepicker-master/js/bootstrap-datepicker.js"></script>
+  <!-- 한국어  달력 쓰려면 추가 로드 -->
+  <script src="./assets/bootstrap-datepicker-master/js/locales/bootstrap-datepicker.ko.js"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/common.css">
+  <!-- jqury -->
+  <script type="text/javascript" src="./assets/js/commonui.js"></script>
+  <!-- components -->
+  <!-- <script src="./assets/js/includeHTML.js"></script> -->
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S -->
+    <div class="content-wrap">
+      <!-- header S -->
+      <!-- <header include-html="/components/header.html"></header> -->
+      <!-- header E -->
+      
+      <!-- project-start -->
+      <form class="section project-start" action="/step2/project_enroll" method="post" enctype="multipart/form-data" accept-charset="uft-8">
+        <div class="inner">
+          <div class="project-start-wrap">
+            <!-- 프로필 정보 -->
+            <div class="project-profile">
+              <div class="img-box">
+                <img src="../assets/img/bruce-mars.jpg" alt="">
+              </div>
+              <div class="txt-box">
+                <p class="tit">
+                  <span>코어 개발자 김수현</span>님의 NFT를 등록해요
+                </p>
+              </div>
+            </div>
+            <!-- form-box S-->
+            
+              <!-- 프로젝트 정보 -->
+              <div class="project-cnt">
+                <h2 class="tit">기본정보</h2>
+                <!-- 프로젝트 제목 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">NFT 이름</span>  
+                    </p>
+                    <p class="txt" name>
+                      <span>프로젝트의 주체, 창작물의 특징이 드러나는 제목을 붙여주세요</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <input type="text" name="_title" placeholder="프로젝트의 주체, 창작물의 특징이 드러나는 제목을 붙여주세요" />
+                  </div>
+                </div>
+                <!-- 프로젝트 대표 이미지 -->
+                
+                <!-- 프로젝트 목표 금액 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require"> NFT 발행량</span>  
+                    </p>
+                    <p class="txt">
+                      <span>프로젝트를 완수하기 위해 필요한 금액을 설정해주세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>목포금액설정시 꼭 알아두세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>종료일까지 목표금앨을 못하면 후원자 결제가 진행되지 않습니다.</span>
+                    </p>
+                    <p class="txt">
+                      <span>종종료 전 후원 취소를 대비해 10% 이상을 초과 달성을 목표로 해주세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>제작비 선물 배송비 인건비 예비 비용등을 함께 고려해주세요.</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <p class="tit">
+                      <span>총발행량</span>
+                    </p>
+                    <input type="text" name="_goalAmount" placeholder="50만원 이상의 금액을 입력해주세요"/>
+                    <div class="info-box">
+                      <dl>
+                        <dt><span>남은 갯수?</span></dt>
+                        <dd><input type="text" name="_ea"  /><span class="amount">원</span></dd>
+                        <dt><span>패밀리</span></dt>
+                        <dd><input type="text" name="_totalFee" /><span class="amount">원</span></dd>
+                        <dt><span>컴패니언</span></dt>
+                        <dd><input type="text" name="_paymentFee" /><span class="amount">원</span></dd>
+                        <dt><span>서포터</span></dt>
+                        <dd><input type="text" name="_platformFee" /><span class="amount">원</span></dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- 프로젝트 대표 영상 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require" >NFT 리워드 이미지</span>  
+                    </p>
+                    <p class="txt">
+                      <span>작품의 아이덴티티를 나타낼 수 있는 이미지를 등록해 주세요. 등록한 이미지는 NFT로 발급됩니다.</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <p class="tit">
+                      
+                    </p>
+                    <article class="darg-box">
+                      <div id="holder"></div> 
+                      <p id="status">File API & FileReader API not supported</p>
+                    </article>
+                    <input type="file" name="_rewardImage"  placeholder="작품의 아이덴티티를 나타낼 수 있는 이미지를 등록해주세요" />
+                    <br/>
+                    <p class="txt">
+                      <span>파일 형식은 mov, mp4. wmv. avi로 용량은 200MB까지 가능합니다</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- 프로젝트 계획 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">리워드 계획</span>  
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <!-- 프로젝트 소개 -->
+                    
+                    
+                    <!-- 프로젝트 예산 -->
+                   
+                    <!-- 프로젝트 일정 -->
+                
+                    <!-- 프로젝트 NFT 리워드 설명 -->
+                    <p class="tit">
+                      <span>NFT 리워드 설명</span>
+                    </p>
+                    <p class="txt">
+                      <span>후원자가 후원 금액별로 받을 수 있는 선물을 상세하게 알려주세요. 표로 정리하거나 예시 이미지를 포함하는 것도 방법입니다.</span>
+                    </p>
+                    <div class="textarea-box">
+  <textarea name="_nftDetails" placeholder=""></textarea>
+                    </div>
+                  </div>
+                </div>
+                <!-- 프로젝트 창작자 정보 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">NFT 발행 정보</span>  
+                    </p>
+                    <p class="txt">
+                      <span>창작자나 개인이나 팀을 대표할 수 있는 이름을 써주세요.</span>
+                    </p>
+                    <p class="tit">
+                      <span class="require">입금 계좌</span>  
+                    </p>
+                    <p class="txt">
+                      <span>후권금을 전달받을 계좌를 등록해주세요. 법인 사업자는 법인 계좌로만 정산받을 수 있습니다.</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <p class="tit">
+                      <span>피나타 CID</span>
+                    </p>
+                    <input type="text" name="_cname" placeholder="이름을 입력하세요"/>
+                    <p class="tit">
+                      <span>게좌 정보를 입력해주세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>프로젝트 종료 후 입금받으실 계좌를 입력해주세요</span>
+                    </p>
+                    <br/>
+                    <p class="tit">
+                      <span>지갑 주소</span>
+                    </p>
+                    <input type="text" name="_cbank" placeholder="거래은행을 입력해주세요"/>
+                   
+                  </div>
+                </div>
+                <!-- 프로젝트 btn -->
+                <div class="btn-box">
+                  <a href="#" class="btn" onclick="location.href='/step1'"><span>뒤로가기</span></a>
+                  <button type="submit" class="btn" ><span>완료</span></button>
+                </div>
+              </div>
+            
+            <!-- form-box E-->
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div> 
+</body>
+<script>
+  includeHTML();
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+    if($('.profile-modal').hasClass('active')){
+        $('.profile-modal').removeClass('active').addClass('inactive');
+    } else {
+        $('.profile-modal').removeClass('inactive').addClass('active');
+    }
+  })
+
+  // datePicker
+  //실제 사용 방법
+   $(function(){
+     $('#input-group-date').datepicker({
+      calendarWeeks: false,
+      todayHighlight: true,
+      autoclose: true,
+      format: "yyyy/mm/dd",
+      language: "kr"}); 
+    });
+
+    // darg
+    var holder = document.getElementById('holder'),
+    state = document.getElementById('status');
+
+    if (typeof window.FileReader === 'undefined') {
+      state.className = 'fail';
+    } else {
+      state.className = 'success';
+      state.innerHTML = 'File API & FileReader available';
+    }
+    
+    holder.ondragover = function () { this.className = 'hover'; return false; };
+    holder.ondragend = function () { this.className = ''; return false; };
+    holder.ondrop = function (e) {
+      this.className = '';
+      e.preventDefault();
+
+      var file = e.dataTransfer.files[0],
+          reader = new FileReader();
+      reader.onload = function (event) {
+        console.log(event.target);
+        holder.style.background = 'url(' + event.target.result + ') no-repeat center';
+      };
+      console.log(file);
+      reader.readAsDataURL(file);
+
+      return false;
+    };
+</script>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jqury -->
+  <script type="text/javascript" src="../assets/js/commonui.js"></script>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- chart -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js" integrity="sha512-DHNepbIus9t4e6YoMBSJLwl+nnm0tIwMBonsQQ+W9NKN6gVVVbomJs9Ii3mQ+HzGZiU5FyJLdnAz9a63ZgZvTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/easypiechart.min.js" integrity="sha512-1yldf7W5suy0ko2u4OGU1qyeGrzh9+A3uyWGH4ws8MbndaWxZsgnzy6uqqBq7NUU/ImI1Js5kqDbunovCN1JqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.js" integrity="sha512-4K9YXsB8UO9a8Fhp6Hpp24lUwXxuaOc/pdNDTyQ+SsabjSjqTO7PXlJHflTN9xLW6vjPJFFjrigPEKIl7RvH7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <!-- components -->
+  <script src="../assets/js/includeHTML.js"></script>
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S-->
+    <div class="content-wrap">
+      <!-- header S-->
+      <%-include('../public/components/header.ejs', {user:user})%>
+      <!-- header E-->
+      
+      <!-- detail -->
+      <div class="section detail">
+        <div class="inner">
+          <div class="top-box">
+            <h2 class="tit">
+              "<%=info.title%>"
+            </h2>
+          </div>
+          <!-- detail Tabs Button-->
+          <div class="tabs-cnt">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                  <span>프로젝트 소개</span>
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                  <span>NFT 세부정보</span>
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                  <span>커뮤니티</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <!-- detail Tabs Contents-->
+          <div class="tabs-box">
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <!-- 팀 프로젝트-->
+                <div class="tab1">
+                  <div class="tab-cnt flex">
+                    <div class="img-box w-50">
+                      
+                      <img src='/img?_path=<%=info.thumbnail%>' alt="아무말">
+                    </div>
+                    <div class="txt-box">
+                      <p class="tit">
+                        <span>모인 금액</span>
+                      </p>
+                      <p class="txt">
+                        <span class="price">00000</span>원
+                        <span class="percent">60</span>%
+                      </p>
+                      <p class="tit">
+                        <span>남은 시간</span>
+                      </p>
+                      <p class="txt">
+                        <span class="percent">80</span>일
+                      </p>
+                      <p class="tit">
+                        <span>후원자</span>
+                      </p>
+                      <p class="txt">
+                        <span class="percent">80</span>명
+                      </p>
+                      <div class="info-box">
+                        <p class="tit">
+                          <span><목표금액></span>
+                        </p>
+                        <p class="txt"><span>"<%=info.goal_amount%>"</span>원</p>
+                        <p class="tit">
+                          <span>펀딩기간</span>
+                        </p>
+                        <p class="txt">
+                          <span>"<%=info['starting date']%>"</span>~
+                          <span>"<%=info['ending date']%>"</span>
+                        </p>
+                        <p class="tit">
+                          <span>결제</span>
+                        </p>
+                        <p class="txt">
+                          <span>"<%=info['ending date']%>"</span><span>에 결제 진행</span>
+                        </p>
+                      </div>
+                      <div class="btn-box">
+                        <div class="input-box w-55">
+                          <input type="text" name="" placeholder="수량을 입력하세요"/>
+                        </div>
+                        <button class="btn btn-primary" type="submit">후원하기</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-cnt">
+                    <div class="txt-box">
+                      <h2>프로젝트소개</h2>
+                      <div class="txt-box">
+                        <p class="txt"><b>
+                          <span>웹드라마 [우리 사이는] 시놉시스</span>
+                        </b></p>
+                        <p class="txt">
+                          "<%=info.project_introduction%>"
+                          <!-- 제주도로 수학여행을 떠난 지환과 네 친구들. 마지막 날 밤 지환과 예인은 속마음이 탄로가 나고
+                          묘한 사이가 된다. 한편 둘도 없는 친구인 혜진과 정윤 사이에도 심상치 않은 기류가 생기는데.. -->
+                        </p>
+                        <p class="txt"><b>
+                          <span>프로젝트 진행 동기 및 목적
+                          </span>
+                        </b></p>
+                        <p class="txt">
+
+                          "<%=info.nft_details%>"
+                          <!-- 스타트업의 시작을 알리며 작품에 대한 투자와 가치를 쉽게 알 수 있는 방법이 될 거라 생각했습니다. 
+                          펀딩 금액 100%를 목표로 두며 자신감이 생겨 발전되는 대고Media의 미래를 생각합니다. 
+                          최소한의 목표금액으로100% 환급을 통해 장비 렌트와  OST  제작비로 사용할 예정입니다. -->
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="chart-cnt">
+                  <h2>NFT 세부정보</h2>
+                  <div class="chaer-box">
+                    <div class="chart chart1" data-percent="55"><span class="title">chart1</span></div>
+                    <div class="chart chart2" data-percent="45"><span class="title">chart2</span></div>
+                    <div class="chart chart3" data-percent="85"><span class="title">chart3</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</body>
+<script>
+  includeHTML();
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+    if($('.profile-modal').hasClass('active')){
+        $('.profile-modal').removeClass('active').addClass('inactive');
+    } else {
+        $('.profile-modal').removeClass('inactive').addClass('active');
+    }
+  })
+
+  //chart
+  $('.chart1').easyPieChart({
+    barColor: '#f16529',
+    trackColor: '#ccc',
+    scaleColor: '#fff',
+    lineCap: 'butt',
+    lineWidth: 30,
+    size: 200,
+    animate: 1000,
+    onStart: $.noop,
+    onStop: $.noop
+  });
+  $('.chart2').easyPieChart({
+      barColor: '#1c88c7',
+      trackColor: '#fff',
+      scaleColor: '#ccc',
+      lineCap: 'round',
+      lineWidth: 30,
+      size: 200,
+      animate: 1000,
+      onStart: $.noop,
+      onStop: $.noop
+  }); 
+  $('.chart3').easyPieChart({
+      barColor: '#20c997',
+      trackColor: '#fff',
+      scaleColor: '#fff',
+      lineCap: 'square',
+      lineWidth: 30,
+      size: 200,
+      animate: 1000,
+      onStart: $.noop,
+      onStop: $.noop
+  });
+</script>
+</html>

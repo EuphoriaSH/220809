@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jqury -->
+  <script type="text/javascript" src="../assets/js/commonui.js"></script>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- css -->
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <!-- components -->
+  <script src="../assets/js/includeHTML.js"></script>
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S-->
+    <div class="content-wrap">
+      <!-- header S-->
+      <header include-html="/components/header.html"></header>
+      <!-- header E-->
+      
+      <!-- detail -->
+      <div class="section theater">
+        <div class="inner">
+            <div class="theater-cnt">
+                <h2>프로젝트 상영관</h2>
+                <div class="btn-box">
+                    <button type="button" class="btn">영화</button>
+                    <button type="button" class="btn">드라마</button>
+                    <button type="button" class="btn">애니메이션</button>
+                    <button type="button" class="btn">다큐멘터리</button>
+                    <button type="button" class="btn">독립영상</button>
+                </div>
+                <ul class="theater-box flex">
+                    <li>
+                        <div class="img-box">
+                            <img src="../assets/img/team-1.jpg">
+                        </div>
+                        <div class="txt-box">
+                            <p class="tit"><span>NFT이름</span></p>
+                            <p class="txt"><span>크리에이터이름</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="../assets/img/team-2.jpg">
+                        </div>
+                        <div class="txt-box">
+                            <p class="tit"><span>NFT이름</span></p>
+                            <p class="txt"><span>크리에이터이름</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="../assets/img/team-3.jpg">
+                        </div>
+                        <div class="txt-box">
+                            <p class="tit"><span>NFT이름</span></p>
+                            <p class="txt"><span>크리에이터이름</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="../assets/img/team-4.jpg">
+                        </div>
+                        <div class="txt-box">
+                            <p class="tit"><span>NFT이름</span></p>
+                            <p class="txt"><span>크리에이터이름</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="../assets/img/team-1.jpg">
+                        </div>
+                        <div class="txt-box">
+                            <p class="tit"><span>NFT이름</span></p>
+                            <p class="txt"><span>크리에이터이름</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="../assets/img/team-2.jpg">
+                        </div>
+                        <div class="txt-box">
+                            <p class="tit"><span>NFT이름</span></p>
+                            <p class="txt"><span>크리에이터이름</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="../assets/img/team-3.jpg">
+                        </div>
+                        <div class="txt-box">
+                            <p class="tit"><span>NFT이름</span></p>
+                            <p class="txt"><span>크리에이터이름</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="../assets/img/team-4.jpg">
+                        </div>
+                        <div class="txt-box">
+                            <p class="tit"><span>NFT이름</span></p>
+                            <p class="txt"><span>크리에이터이름</span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</body>
+<script>
+  includeHTML();
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+    if($('.profile-modal').hasClass('active')){
+        $('.profile-modal').removeClass('active').addClass('inactive');
+    } else {
+        $('.profile-modal').removeClass('inactive').addClass('active');
+    }
+  })
+</script>
+</html>

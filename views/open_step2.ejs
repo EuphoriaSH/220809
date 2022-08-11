@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="./assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- data-piker -->
+  <!-- datepicker 는 jquery 1.7.1 이상 bootstrap 2.0.4 이상 버전이 필요함 -->
+  <!-- jQuery가 먼저 로드 된 후 datepicker가 로드 되어야함.-->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <link rel="stylesheet" href="./assets/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.css"></link>
+  <script type="text/javascript" src="./assets/bootstrap-datepicker-master/js/bootstrap-datepicker.js"></script>
+  <!-- 한국어  달력 쓰려면 추가 로드 -->
+  <script src="./assets/bootstrap-datepicker-master/js/locales/bootstrap-datepicker.ko.js"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/common.css">
+  <!-- jqury -->
+  <script type="text/javascript" src="./assets/js/commonui.js"></script>
+  <!-- components -->
+  <script src="./assets/js/includeHTML.js"></script>
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S -->
+    <div class="content-wrap">
+      <!-- header S -->
+      <header include-html="/components/header.html"></header>
+      <!-- header E -->
+      
+      <!-- project-start -->
+      <form class="section project-start" action="/step2/project_enroll" method="post" enctype="multipart/form-data" accept-charset="uft-8">
+        <div class="inner">
+          <div class="project-start-wrap">
+            <!-- 프로필 정보 -->
+            <div class="project-profile">
+              <div class="img-box">
+                <img src="../assets/img/bruce-mars.jpg" alt="">
+              </div>
+              <div class="txt-box">
+                <p class="tit">
+                  <span>코어 개발자 김수현</span>님의 프로젝트를 등록해요
+                </p>
+              </div>
+            </div>
+            <!-- form-box S-->
+            
+              <!-- 프로젝트 정보 -->
+              <div class="project-cnt">
+                <h2 class="tit">기본정보</h2>
+                <!-- 프로젝트 제목 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">프로젝트제목</span>  
+                    </p>
+                    <p class="txt" name>
+                      <span>프로젝트의 주체, 창작물의 특징이 드러나는 제목을 붙여주세요</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <input type="text" name="_title" placeholder="프로젝트의 주체, 창작물의 특징이 드러나는 제목을 붙여주세요" />
+                  </div>
+                </div>
+                <!-- 프로젝트 대표 이미지 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">프로젝트 대표 이미지</span>  
+                    </p>
+                    <p class="txt">
+                      <span>후원자들이 프로젝트의 내용을 쉅게 파악하고, 좋은 인상을 받을 수 있도혹 이미지 가이드라인을 따라 주세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>1개 이상의 이미지를 등록하면 이미지 슬라이더 형태로 제공됩니다.</span>
+                    </p>
+                    <p class="txt">
+                      <span>푸시 메시지 등 이미지가 1개만 제공되는 상황에서 대표이미지가 활용됩니다.</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <input type="file" name="_thumbnail" multiple placeholder="프로젝트의 주체, 창작물의 특징이 드러나는 이미지를 등록해주세요" />
+                    <p class="txt">
+                      <span>이미지업로드(0/5)</span>
+                    </p>
+                    <p class="txt">
+                      <span>최소 1개, 최대 5개까지 업로드 가능</span>
+                    </p>
+                    <p class="txt">
+                      <span>파일형식: jpg 또는 png</span>
+                    </p>
+                    <p class="txt">
+                      <span>사이즈 : 가로 1,240px, 세로 930px 이상 이미지를 등록하면 반영됩니다.</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- 프로젝트 목표 금액 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">프로젝트 목표 금액</span>  
+                    </p>
+                    <p class="txt">
+                      <span>프로젝트를 완수하기 위해 필요한 금액을 설정해주세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>목포금액설정시 꼭 알아두세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>종료일까지 목표금앨을 못하면 후원자 결제가 진행되지 않습니다.</span>
+                    </p>
+                    <p class="txt">
+                      <span>종종료 전 후원 취소를 대비해 10% 이상을 초과 달성을 목표로 해주세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>제작비 선물 배송비 인건비 예비 비용등을 함께 고려해주세요.</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <p class="tit">
+                      <span>목표금액</span>
+                    </p>
+                    <input type="text" name="_goalAmount" placeholder="50만원 이상의 금액을 입력해주세요"/>
+                    <div class="info-box">
+                      <dl>
+                        <dt><span>목표 금액 달성 시 예상 수령액</span></dt>
+                        <dd><input type="text" name="_ea"  /><span class="amount">원</span></dd>
+                        <dt><span>총 수수료</span></dt>
+                        <dd><input type="text" name="_totalFee" /><span class="amount">원</span></dd>
+                        <dt><span>결재대행 수수료(총 결재액의 3% + VAT)</span></dt>
+                        <dd><input type="text" name="_paymentFee" /><span class="amount">원</span></dd>
+                        <dt><span>플랫폼 수수료(총 모금액의 5% + VAT)</span></dt>
+                        <dd><input type="text" name="_platformFee" /><span class="amount">원</span></dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                <!-- 프로젝트 펀딩 기간 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">프로젝트 펀딩 기간</span>
+                  </div>
+                  <div class="input-box w-55">
+                    <p class="tit">
+                      <span>시작일</span>
+                    </p>
+                    <!-- datePicker -->
+                    <!-- 시작시 기본 날짜 설정은 value를 이용 -->
+                    <div id="input-group-date"  class="input-group date" data-provide="datepicker">
+                      <input type="text" name="_startingDate" class="form-control">
+                      <div class="input-group-addon">
+                          <span class="glyphicon glyphicon-th"></span>
+                      </div>
+                    </div>
+                    <p class="tit">
+                      <span>펀딩기간</span>
+                    </p>
+                    <input type="text" name="_fundingPeriod"  >
+                    <p class="tit">
+                      <span>종료일</span>
+                    </p>
+                    <!-- datePicker -->
+                    <!-- 시작시 기본 날짜 설정은 value를 이용 -->
+                    <div id="input-group-date" class="input-group date" data-provide="datepicker">
+                      <input type="text" name="_endingDate" class="form-control">
+                      <div class="input-group-addon">
+                          <span class="glyphicon glyphicon-th"></span>
+                      </div>
+                    </div>
+                    <p class="tit">
+                      <span>후원자 결제 종료</span>
+                    </p>
+                    <p class="txt">
+                      <span>종료일 다음 날부터 7일</span>
+                    </p>
+                    <p class="tit">
+                      <span>정산일</span>
+                    </p>
+                    <p class="txt">
+                      <span>후원자 결제 종료 다음 날부터 7영업일</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- 프로젝트 대표 영상 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require" >리워드 이미지</span>  
+                    </p>
+                    <p class="txt">
+                      <span>작품의 아이덴티티를 나타낼 수 있는 이미지를 등록해 주세요. 등록한 이미지는 NFT로 발급됩니다.</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <p class="tit">
+                      <span>목표금액</span>
+                    </p>
+                    <article class="darg-box">
+                      <div id="holder"></div> 
+                      <p id="status">File API & FileReader API not supported</p>
+                    </article>
+                    <input type="file" name="_rewardImage"  placeholder="작품의 아이덴티티를 나타낼 수 있는 이미지를 등록해주세요" />
+                    <br/>
+                    <p class="txt">
+                      <span>파일 형식은 mov, mp4. wmv. avi로 용량은 200MB까지 가능합니다</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- 프로젝트 계획 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">프로젝트 계획</span>  
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <!-- 프로젝트 소개 -->
+                    <p class="tit">
+                      <span>프로젝트 소개</span>
+                    </p>
+                    <p class="txt">
+                      <span>무엇을 만들기 위한 프로젝트인지 분명히 알려주세요</span>
+                    </p>
+                    <div class="textarea-box">
+  <textarea name="_pI" placeholder="막연하다면 아래의 질문에 대한 답이 내용에 포함되도록 작성해보세요
+  Q 무엇을 만들기 위한 프로젝트인가요?
+  Q 무엇을 만들기 위한 프로젝트인가요?"></textarea>
+                    </div>
+                    <!-- 프로젝트 예산 -->
+                    <p class="tit">
+                      <span>프로젝트 예산</span>
+                    </p>
+                    <p class="txt">
+                      <span>펀딩 목표 금액을 제작에 어떻게 사용할 것인지 구체적으로 알려주세요. '인건비', '배송비', '인쇄비', '대관료' 등 세부 항목별로 작성해야 합니다.</span>
+                    </p>
+                    <div class="textarea-box">
+  <textarea name="_projectBudget" placeholder="설정하신 목표 금액을 어디에 사용 예정이신지 구체적인 지출 항목으로 적어주세요.
+  - 예산은 '제작비'가 아닌 구체적인 '항목으로 적어주세요.
+  - 이번 프로젝트의 실행에 필요한 비용으로만 작성해 주세요.
+  - 기부, 다음 프로젝트의 실행에 필요한 비용으로만 작성해 주세요.
+  - 만일 전체 제작 비용 중 일부만 모금하시는 경우라면, 나머지 제작 비용은 어떻게 마련 예정인지 추가적으로 작성해 주세요.
+
+  (예시)
+
+  목표 금액은 아래의 지출 항목으로 사용할 예정입니다.
+  - 인건비
+  - 배송비
+  - 발주비
+  - 디자인 의뢰비
+  - 수수료"></textarea>
+                    </div>
+                    <!-- 프로젝트 일정 -->
+                    <p class="tit">
+                      <span>프로젝트 일정</span>
+                    </p>
+                    <p class="txt">
+                      <span>작업 일정을 구체적인 날짜와 함께 작성하세요. 후원자가 일정을 보면서 어떤 작업이 진행될지 알 수 있어야 합니다. 펀딩 종료 이후의 제작 일정을 반드시 포함하세요.</span>
+                    </p>
+                    <div class="textarea-box">
+  <textarea name="_projectPeriod" placeholder="아래의 양식을 참고하여 작성해보세요.
+
+  (예시)
+  - 0월 0일 : 현재 제품 시안 및 1차 샘플 제작
+  - 0월 0일 : 펀딩 시작일
+  - 0월 0일 : 샘플 작업 보완
+  - 0월 0일 : 펀딩 종료일
+  - 0월 0일 : 2차 샘플 제작
+  - 0월 0일 : 제품 디테일 보완
+  - 0월 0일 : 제품 발주 시작
+  - 0월 0일 : 후가공 처리 및 포장 작업
+  - 0월 0일 : 선물 예상 전달일"></textarea>
+                    </div>
+                    <!-- 프로젝트 NFT 리워드 설명 -->
+                    <p class="tit">
+                      <span>NFT 리워드 설명</span>
+                    </p>
+                    <p class="txt">
+                      <span>후원자가 후원 금액별로 받을 수 있는 선물을 상세하게 알려주세요. 표로 정리하거나 예시 이미지를 포함하는 것도 방법입니다.</span>
+                    </p>
+                    <div class="textarea-box">
+  <textarea name="_nftDetails" placeholder=""></textarea>
+                    </div>
+                  </div>
+                </div>
+                <!-- 프로젝트 창작자 정보 -->
+                <div class="cnt-box flex">
+                  <div class="txt-box w-30">
+                    <p class="tit">
+                      <span class="require">창작자 이름</span>  
+                    </p>
+                    <p class="txt">
+                      <span>창작자나 개인이나 팀을 대표할 수 있는 이름을 써주세요.</span>
+                    </p>
+                    <p class="tit">
+                      <span class="require">입금 계좌</span>  
+                    </p>
+                    <p class="txt">
+                      <span>후권금을 전달받을 계좌를 등록해주세요. 법인 사업자는 법인 계좌로만 정산받을 수 있습니다.</span>
+                    </p>
+                  </div>
+                  <div class="input-box w-55">
+                    <p class="tit">
+                      <span>이름</span>
+                    </p>
+                    <input type="text" name="_cname" placeholder="이름을 입력하세요"/>
+                    <p class="tit">
+                      <span>게좌 정보를 입력해주세요.</span>
+                    </p>
+                    <p class="txt">
+                      <span>프로젝트 종료 후 입금받으실 계좌를 입력해주세요</span>
+                    </p>
+                    <br/>
+                    <p class="tit">
+                      <span>거래은행</span>
+                    </p>
+                    <input type="text" name="_cbank" placeholder="거래은행을 입력해주세요"/>
+                    <p class="tit">
+                      <span>계좌번호</span>
+                    </p>
+                    <input type="text" name="_caccount" placeholder="계좌번호를 입력해주세요"/>
+                    
+                    <p class="tit">
+                      <span>예금주명</span>
+                    </p>
+                    <input type="text" name="_aname" placeholder="계좌에 등록된 예금주명과 일치해야합니다."/>
+                  </div>
+                </div>
+                <!-- 프로젝트 btn -->
+                <div class="btn-box">
+                  <a href="#" class="btn" onclick="location.href='/step1'"><span>뒤로가기</span></a>
+                  <button type="submit" class="btn" ><span>다음</span></button>
+                </div>
+              </div>
+            
+            <!-- form-box E-->
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div> 
+</body>
+<script>
+  includeHTML();
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+    if($('.profile-modal').hasClass('active')){
+        $('.profile-modal').removeClass('active').addClass('inactive');
+    } else {
+        $('.profile-modal').removeClass('inactive').addClass('active');
+    }
+  })
+
+  // datePicker
+  //실제 사용 방법
+	$(function(){
+     $('#input-group-date').datepicker({
+      calendarWeeks: false,
+      todayHighlight: true,
+      autoclose: true,
+      format: "yyyy/mm/dd",
+      language: "kr"}); 
+    });
+
+    // darg
+    var holder = document.getElementById('holder'),
+    state = document.getElementById('status');
+
+    if (typeof window.FileReader === 'undefined') {
+      state.className = 'fail';
+    } else {
+      state.className = 'success';
+      state.innerHTML = 'File API & FileReader available';
+    }
+    
+    holder.ondragover = function () { this.className = 'hover'; return false; };
+    holder.ondragend = function () { this.className = ''; return false; };
+    holder.ondrop = function (e) {
+      this.className = '';
+      e.preventDefault();
+
+      var file = e.dataTransfer.files[0],
+          reader = new FileReader();
+      reader.onload = function (event) {
+        console.log(event.target);
+        holder.style.background = 'url(' + event.target.result + ') no-repeat center';
+      };
+      console.log(file);
+      reader.readAsDataURL(file);
+
+      return false;
+    };
+</script>
+</html>

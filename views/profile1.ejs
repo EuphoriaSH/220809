@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery가 먼저 로드 된 후 datepicker가 로드 되어야함.-->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="./assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- chart js-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/common.css">
+  <!-- jqury -->
+  <script type="text/javascript" src="./assets/js/commonui.js"></script>
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S -->
+    <div class="content-wrap">
+      
+      <!-- profile -->
+      <div class="profile-cnt">
+        <div class="inner">
+          <div class="project-start-wrap">
+            <!-- 프로필 정보 -->
+            <div class="project-profile">
+              <div class="img-box">
+                <img src="../assets/img/나의 프로젝트_3_정지현.jpg" alt="">
+              </div>
+              <div class="txt-box">
+                <p class="tit">
+                  <span>코어 개발자 김수현</span>님의 프로필
+                </p>
+              </div>
+            </div>
+            
+            <div class="profile-cnt mt-5">
+              <div class="tit-box">
+                <h2>후원한 프로젝트</h2>
+              </div>
+              <div class="profile-box mt-5">
+                <div class="profile-top">
+                  <ul class="flex">
+                    <li class="flex" style="align-items: flex-end;">
+                      <div class="img-box">
+                        <span><img src="../assets/img/나의 프로젝트_4_미나리.jpg"></span>
+                      </div>
+                      <div class="txt-box">
+                        <p class="tit">미나리</p>
+                        <p class="txt">리 아이작 정</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="profile-bottom mt-5">
+                  <div class="txt-box">
+                    <p class="txt-blue">
+                      <span>프로젝트 일정 준수율</span>
+                      <span>78%</span>
+                    </p>
+                    <div class="flex" style="justify-content: space-between;">
+                      <p class="txt-red">
+                        <span>모금액사용내역</span>
+                      </p>
+                      <!-- chart -->
+                      <div class="chart pie-chart1">
+                        <canvas id="test1"></canvas>
+                      </div>
+                    </div>
+                    <p class="tit mt-3">예상 프로젝트 완성일 2022/09/23</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tit-box mt-5">
+                <h2>올린 프로젝트</h2>
+              </div>
+              <div class="profile-box mt-5">
+                <div class="profile-top">
+                  <ul class="flex">
+                    <li class="flex" style="align-items: flex-end;">
+                      <div class="img-box">
+                        <span><img src="../assets/img/오픈예정_5.jpg"></span>
+                      </div>
+                      <div class="txt-box">
+                        <p class="tit">라임크라임</p>
+                        <p class="txt">이승환, 유재욱</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="profile-bottom mt-5">
+                  <div class="txt-box">
+                    <p class="txt-blue">
+                      <span>모금액 달성률</span>
+                      <span>45%</span>
+                    </p>
+                    <div class="flex" style="justify-content: space-between;">
+                      <p class="txt-red">
+                        <span>NFT 현항</span>
+                      </p>
+                      <!-- chart -->
+                      <div class="chart pie-chart1">
+                        <canvas id="test2"></canvas>
+                      </div>
+                    </div>
+                    <p class="tit mt-3 t-left">펀딩 마감 D - 17</p>
+                    <p class="txt-blue">
+                      <span>후원자 성별/ 연령별 현황</span>
+                    </p>
+                    <div class="flex" style="justify-content: space-between;">
+                      <!-- chart -->
+                      <div class="chart pie-chart1">
+                        <canvas id="test3"></canvas>
+                      </div>
+                      <!-- chart -->
+                      <div class="chart pie-chart1">
+                        <canvas id="test4"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</body>
+<script>
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+    if($('.profile-modal').hasClass('active')){
+        $('.profile-modal').removeClass('active').addClass('inactive');
+    } else {
+        $('.profile-modal').removeClass('inactive').addClass('active');
+    }
+  })
+
+  // chart 모금액사용내역
+  var ctx2 = document.getElementById('test1').getContext('2d');
+  var chart = new Chart(ctx2, {
+    type: 'pie',
+    data: {
+      labels: ["인건비", "발주비", "디자인의뢰비", "장비대여비", "수수료"], // 항목
+      datasets: [{
+        label: "모금액 사용내역",
+        backgroundColor: ["#3e95cd", "#c45850","#3cba9f","#8e5ea2","#e8c3b9"], // 그래프컬러
+        data: [5267,2478,734,784,433] // 수치
+      }]
+    },
+    options: {
+      title: { // title 보이기
+        display: false, // 기본값 true
+        text: '모금액 사용내역'
+      },
+    }
+});
+
+// chart NFT 현항
+var ctx1 = document.getElementById('test2').getContext('2d');
+  var chart = new Chart(ctx1, {
+    type: 'pie',
+    data: {
+      labels: ["치어러", "백커", "서포터", "스폰서", "컴패니언", "패밀리", "기타"], // 항목
+      datasets: [{
+        label: "NFT 현항",
+        backgroundColor: ["#3e95cd", "#c45850","#3cba9f","#8e5ea2","#e8c3b9", "#FF8C00", "#778899"], // 그래프컬러
+        data: [3478,2867,2734,1684,1233,920,800] // 수치
+      }]
+    },
+    options: {
+      title: { // title 보이기
+        display: false, // 기본값 true
+        text: 'NFT 현항'
+      },
+    }
+});
+
+// chart 후원자 성별
+var ctx2 = document.getElementById('test3').getContext('2d');
+  var chart = new Chart(ctx2, {
+    type: 'pie',
+    data: {
+      labels: ["여성", "남성"], // 항목
+      datasets: [{
+        label: "후원자 성별",
+        backgroundColor: ["#7CFC00", "#00CED1"], // 그래프컬러
+        data: [3478,2867] // 수치
+      }]
+    },
+    options: {
+      title: { // title 보이기
+        display: false, // 기본값 true
+        text: '후원자 성별'
+      },
+    }
+});
+
+// chart 연령별 현황
+var ctx3 = document.getElementById('test4').getContext('2d');
+  var chart = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+      labels: ["19세 이하", "20대", "30대", "40대", "50대 이상"],
+      datasets: [
+        {
+          label: "연령별 현황",
+          backgroundColor: ["#3e95cd", "#c45850","#3cba9f","#e8c3b9","#8e5ea2"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: { // title 보이기
+        display: false, // 기본값 true
+        text: '연령별 현황'
+      },
+    }
+});
+</script>
+</html>

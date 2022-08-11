@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jqury -->
+  <script type="text/javascript" src="../assets/js/commonui.js"></script>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- css -->
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <!-- components -->
+  <script src="../assets/js/includeHTML.js"></script>
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S-->
+    <div class="content-wrap">
+      <!-- header S-->
+      <!-- <header include-html="/components/header.html"></header> -->
+      <%-include('../public/components/header.ejs', {user:user})%>
+      <!-- header E-->
+      
+      <!-- detail -->
+      <div class="section theater">
+        <div class="inner">
+            <div class="theater-cnt">
+                <h2>프로젝트 리스트</h2>
+                <div class="btn-box">
+                    <button type="button" class="btn">영화</button>
+                    <button type="button" class="btn">드라마</button>
+                    <button type="button" class="btn">애니메이션</button>
+                    <button type="button" class="btn">다큐멘터리</button>
+                    <button type="button" class="btn">독립영상</button>
+                </div>
+                <ul class="theater-box flex">
+                    <% for (var i = 0; i < list.length; i++) { %>
+                        <li onclick="location.href=`/step2/detail?_title=<%=list[i].title%>`">
+                            <div class="img-box">
+                                <img src="/img?_path=<%=list[i].thumbnail%>">
+                            </div>
+                            <div class="txt-box">
+                                <p class="tit"><span>"<%=list[i].title%>"</span></p>
+                                <p class="txt"><span>"<%=list[i].account_name%>"</span></p>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</body>
+<script>
+  includeHTML();
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+    if($('.profile-modal').hasClass('active')){
+        $('.profile-modal').removeClass('active').addClass('inactive');
+    } else {
+        $('.profile-modal').removeClass('inactive').addClass('active');
+    }
+  })
+</script>
+</html>

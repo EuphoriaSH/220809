@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- css -->
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <!-- jqury -->
+  <script type="text/javascript" src="../assets/js/commonui.js"></script>
+  <!-- components -->
+  <script src="../assets/js/includeHTML.js"></script>
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S-->
+    <div class="content-wrap">
+      <!-- header S-->
+      <header include-html="/components/header.html"></header>
+      <!-- header E-->
+      
+      <!-- sign_completion -->
+      <div class="section sign">
+        <div class="inner">
+          <div class="tit">펀딩등록완료</div>
+          <div class="form-box">
+            <div class="login-user-wrap t-center mt-100">
+              <h3 style="line-height:1.4em;font-weight:600;font-size:18px;">
+                만족할 수 있는 서비스를 만들 수 있도록<br/>
+                계속해서 노력해나아가겠습니다<br/>
+                펀딩신청을 해주셔서 감사합니다
+              </h3>
+              <span class="mt-5"><img src="../assets/img/Thanks.png" alt=""></span>
+            </div>
+            <div class="login-user-wrap mt-100">
+              <button type="button" class="submit-btn" onclick="location.href='/'">메인으로가기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</body>
+<script>
+  includeHTML();
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+    if($('.profile-modal').hasClass('active')){
+        $('.profile-modal').removeClass('active').addClass('inactive');
+    } else {
+        $('.profile-modal').removeClass('inactive').addClass('active');
+    }
+  })
+</script>
+</html>

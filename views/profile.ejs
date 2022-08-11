@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="./assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- data-piker -->
+  <!-- datepicker 는 jquery 1.7.1 이상 bootstrap 2.0.4 이상 버전이 필요함 -->
+  <!-- jQuery가 먼저 로드 된 후 datepicker가 로드 되어야함.-->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/common.css">
+  <!-- jqury -->
+  <script type="text/javascript" src="./assets/js/commonui.js"></script>
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S -->
+    <div class="content-wrap">
+      
+      <!-- project-start -->
+      <form class="section project-start" action="/step2/project_enroll" method="post" enctype="multipart/form-data" accept-charset="uft-8">
+        <div class="inner">
+          <div class="project-start-wrap">
+            <!-- 프로필 정보 -->
+            <div class="project-profile">
+              <div class="img-box">
+                <img src="../assets/img/나의 프로젝트_3_정지현.jpg" alt="">
+              </div>
+              <div class="txt-box">
+                <p class="tit">
+                  <span>코어 개발자 김수현</span>님의 프로필
+                </p>
+              </div>
+            </div>
+            
+            <div class="profile-cnt mt-5">
+              <div>
+                <h2>후원한 프로젝트</h2>
+              </div>
+              <div class="profile-box mt-5">
+                <div class="profile-top">
+                  <ul class="flex">
+                    <li class="flex" style="align-items: flex-end;">
+                      <div class="img-box">
+                        <span><img src="../assets/img/나의 프로젝트_4_미나리.jpg"></span>
+                      </div>
+                      <div class="txt-box">
+                        <p class="tit">미나리</p>
+                        <p class="txt">리 아이작 정</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="profile-bottom mt-5">
+                  <div class="txt-box">
+                    <p class="txt-blue">
+                      <span>프로젝트 일정 준수율</span>
+                      <span>78%</span>
+                    </p>
+                    <div class="flex" style="justify-content: space-between;">
+                      <p class="txt-red">
+                        <span>모금액사용내역</span>
+                      </p>
+                      <span class="chart">
+                        <img src="../assets/img/chart1.png">
+                      </span>
+                    </div>
+                    <p class="tit mt-3">예상 프로젝트 완성일 2022/09/23</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5">
+                <h2>올린 프로젝트</h2>
+              </div>
+              <div class="profile-box mt-5">
+                <div class="profile-top">
+                  <ul class="flex">
+                    <li class="flex" style="align-items: flex-end;">
+                      <div class="img-box">
+                        <span><img src="../assets/img/오픈예정_5.jpg"></span>
+                      </div>
+                      <div class="txt-box">
+                        <p class="tit">라임크라임</p>
+                        <p class="txt">이승환, 유재욱</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="profile-bottom mt-5">
+                  <div class="txt-box">
+                    <p class="txt-blue">
+                      <span>모금액 달성률</span>
+                      <span>45%</span>
+                    </p>
+                    <div class="flex" style="justify-content: space-between;">
+                      <p class="txt-red">
+                        <span>NFT 현항</span>
+                      </p>
+                      <span class="chart">
+                        <img src="../assets/img/chart2.png">
+                      </span>
+                    </div>
+                    <p class="tit mt-3 t-left">펀딩 마감 D - 17</p>
+                    <p class="txt-blue">
+                      <span>후원자 성별/ 연령별 현황</span>
+                    </p>
+                    <div class="flex" style="justify-content: space-between;">
+                      <span class="chart">
+                        <img src="../assets/img/chart3.png">
+                      </span>
+                      <span class="chart">
+                        <img src="../assets/img/chart4.png">
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div> 
+</body>
+<script>
+  includeHTML();
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+    if($('.profile-modal').hasClass('active')){
+        $('.profile-modal').removeClass('active').addClass('inactive');
+    } else {
+        $('.profile-modal').removeClass('inactive').addClass('active');
+    }
+  })
+
+  // datePicker
+  //실제 사용 방법
+	$(function(){
+     $('#input-group-date').datepicker({
+      calendarWeeks: false,
+      todayHighlight: true,
+      autoclose: true,
+      format: "yyyy/mm/dd",
+      language: "kr"}); 
+    });
+
+    // darg
+    var holder = document.getElementById('holder'),
+    state = document.getElementById('status');
+
+    if (typeof window.FileReader === 'undefined') {
+      state.className = 'fail';
+    } else {
+      state.className = 'success';
+      state.innerHTML = 'File API & FileReader available';
+    }
+    
+    holder.ondragover = function () { this.className = 'hover'; return false; };
+    holder.ondragend = function () { this.className = ''; return false; };
+    holder.ondrop = function (e) {
+      this.className = '';
+      e.preventDefault();
+
+      var file = e.dataTransfer.files[0],
+          reader = new FileReader();
+      reader.onload = function (event) {
+        console.log(event.target);
+        holder.style.background = 'url(' + event.target.result + ') no-repeat center';
+      };
+      console.log(file);
+      reader.readAsDataURL(file);
+
+      return false;
+    };
+</script>
+</html>

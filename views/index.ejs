@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../assets/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../assets/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <!-- font-->
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.1.1-web/js/all.min.js">
+  <!-- css -->
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <!-- jqury -->
+  <script type="text/javascript" src="../assets/js/commonui.js"></script>
+  <!-- components -->
+  
+</head>
+<body>
+
+  <div id="viewWrap">
+    <!-- content-wrap S-->
+    <div class="content-wrap">
+      <!-- header S-->
+      <%-include('../public/components/header.ejs', {user:user})%>
+      <!-- header E-->
+
+      <!-- carousel-main S -->
+      <div class="section carousel-main">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../assets/img/main_1.jpg" class="d-block w-100" alt="...">
+              <!--
+              <div class="text-box t-right">
+                <h2>Crowd Funding</h2>
+                <P>크리에이터를 위한 크라우드펀딩</P>
+              </div>
+              -->
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/img/main_2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/img/main_3.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <!-- carousel-main E -->
+
+      <!-- img-cnt S -->
+      <div class="section img-cnt mt-120">
+        <div class="inner">
+          <h2 class="tit t-left">오픈예정 프로젝트</h2>
+          <div class="img-list mt-5">
+            <ul>
+              <li><div class="img-box"><img src="../assets/img/bg.jpg" alt=""></div></li>
+              <li><div class="img-box"><img src="../assets/img/bg0.jpg" alt=""></div></li>
+              <li><div class="img-box"><img src="../assets/img/bg2.jpg" alt=""></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- img-cnt E -->
+
+      <!-- NewsLeter S -->
+      <div class="section newsleter-cnt mt-120">
+        <div class="inner">
+          <h2 class="tit">새로운 작품을 놓치지 마세요!</h2>
+          <form class="input-box" action="/subscription" method="post">
+            <input type="text" placeholder="이메일 주소" name="_email">
+            <button class="newsleter-btn" type="submit">구독하기</button>
+          </form>
+        </div>
+      </div>
+      <!-- NewsLeter E -->
+
+      <!-- info-cnt S -->
+      <div class="section info-cnt mt-120">
+        <div class="inner">
+          <h2 class="tit t-left">인기있는 프로젝트</h2>
+          <div class="info-list mt-5">
+            <ul>
+              <li>
+                <div>
+                  <div class="img-box">
+                    <img src="../assets/img/list-01.jpg" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="name">송민호 화백</p>
+                    <p class="project-name">Thx(thanks) Jennie</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="img-box">
+                    <img src="../assets/img/list-04.jpg" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="name">Shohey Otomo</p>
+                    <p class="project-name">볼펜 일러스트레이터</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="img-box">
+                    <img src="../assets/img/list-02.jpg" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="name">전온 작가</p>
+                    <p class="project-name">Flooded Reality</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="img-box">
+                    <img src="../assets/img/list-03.jpeg" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <p class="name">황로우</p>
+                    <p class="project-name">밤의 맛</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- info-cnt E -->
+
+      <!-- text-cnt S -->
+      <div class="section text-cnt mt-120">
+        <div class="inner">
+          <div class="flex">
+            <div class="img-box">
+              <img src="../assets/img/Ethereum.png" alt="">
+            </div>
+            <div class="txt-box t-right">
+              <h2>NFT 란?</h2>
+              <p>
+                NFT(Non-Fungible Token)는
+                <br>
+                블록체인 기술에 기반한 '대체불가능 토큰' 기술입니다.
+                <br/>
+                NFT 미팅을 통해 위, 변조가 쉬운 각종 무형자산들인
+                <br/>
+                디지털 아트, 영상, 음악, 계약서 등이 원본 임을 증명할 수 있습니다.
+              </p>
+            </div>
+          </div>
+          <div class="flex mt-120">
+            <div class="txt-box">
+              <h2>NFT Funding의 역할은?</h2>
+              <p>
+                NFT 기술을 통해 아티스트들의 소유권과 저작권을 보호합니다.
+                <br/>
+                이는 아티스트들이 지속가능한 작업환경을 구축하는 토대가 됩니다.
+                <br/>
+                아트 플랫폼으로 시작한 NFT Funding의 목적지는 ‘예술의 대중화’입니다.
+                <br/>
+                <button type="button" class="btn btn-primary mt-5 w-50">클라우드 펀딩이란?</button>
+              </p>
+            </div>
+            <div class="img-box">
+              <img src="../assets/img/list-05.jpg" alt="">
+            </div>
+          </div>
+          <div class="flex mt-120" style="justify-content:space-between;">
+            <div class="txt-box wt-45">
+              <h2>For Artist</h2>
+              <p>
+                NFT Funding의 합리적인 판매 수수료 정책은 그 자체로 아티스트들에 대한 응원이 됩니다. 또한 NFT Funding은 모든 디바이스를 지원하는 메타버스 갤러리 전시를 통해 작가와 작품을 적극적으로 홍보합니다. 시공의 제약을 뛰어넘는 갤러리를 구축함으로서 NFT Funding은 예술의 대중화에 기여하고 있습니다.
+              </p>
+            </div>
+            <div class="txt-box wt-45">
+              <h2>For Collector</h2>
+              <p>
+                NFT Funding은 신용카드 결제 방식을 도입하여 NFT 아트에 대한 콜렉터들의 접근성을 높였습니다. 또한 에디션 판매 방식 도입으로 누구나 콜렉터가 될 수 있는 여건을 조성했습니다. 앞으로도 NFT Funding은 무한한 잠재력을 지닌 작가들을 발굴하여 콜렉터들에게 Contemporary fine art 시장의 블루칩을 선물할 것입니다.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <h2 class="tit mt-120">START YOUR OWN COLLECTION TODAY</h2>
+            <button type="button" class="btn btn-dark mt-5 collecting-btn">콜렉팅 시작하기</button>
+          </div>
+        </div>
+      </div>
+      <!-- text-cnt E -->
+      
+    </div>
+    <!-- content-wrap E-->
+  </div> 
+</body>
+<script>
+  includeHTML();
+  // header
+  $(document).on('click', '#header .profile-btn', function(){
+      if($('.profile-modal').hasClass('active')){
+          $('.profile-modal').removeClass('active').addClass('inactive');
+      } else {
+          $('.profile-modal').removeClass('inactive').addClass('active');
+      }
+  })
+</script>
+</html>
